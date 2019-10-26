@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BerlinClock.Classes.Mappers;
+using Clocks = BerlinClock.Classes.Clocks;
 
 namespace BerlinClock
 {
@@ -9,7 +7,9 @@ namespace BerlinClock
     {
         public string convertTime(string aTime)
         {
-            throw new NotImplementedException();
+            var berlinClock = new Clocks.BerlinClock(new LampToStringMapper());
+            berlinClock.SetTime(aTime);
+            return berlinClock.GetTime();
         }
     }
 }
